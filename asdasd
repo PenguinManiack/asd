@@ -23,3 +23,6 @@ Section:NewButton("plamens gui", "credit to plamen", function()
     Section:NewButton("senors", "only paid executors work lmmao", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SernoxSergal/Sernox-s-Door-Gui/main/Gui"))()-- function
     end) 
+    Section:NewButton("hardcore", "makes the game really hard", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/UkqP7g6x"))()
+    end) 
