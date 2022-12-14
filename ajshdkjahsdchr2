@@ -1,14 +1,14 @@
-    local function setup(room)
-        for _, v in pairs(room:GetDescendants()) do
-            if v.Name=="FakeDoor_Hotel" then
+local function setup(room)
+    for _, v in pairs(room:GetDescendants()) do
+        if v.Name=="FakeDoor_Hotel" then
         local FakeDoor_Hotel =  workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("FakeDoor_Hotel", true)
         local newdoor = FakeDoor_Hotel.FakeDoor.CFrame
         local model = game:GetObjects("rbxassetid://11821709856")[1]
-        model.Parent = workspace
+        model.Parent = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]
         model:SetPrimaryPartCFrame(newdoor)
         FakeDoor_Hotel:Destroy() -- bedroom
-    workspace.CR.C.Prompt.Triggered:Connect(function()
-                workspace.CR.C:Destroy()
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.C.Prompt.Triggered:Connect(function()
+                workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.C:Destroy()
                 -- // Crucifix Things
             getgenv().TheTool = "11737245722" --Example: getgenv().TheTool = 11590476113 (That is the Normal Crucifix)
             getgenv().TheCircleWithTheChains = "11736092176" --Example: getgenv().TheTool = 11584227521 (That is the Normal Crucifix)
@@ -373,8 +373,8 @@
             Cross:Remove()
         end)
         end)
-    workspace.CR.L.Prompt.Triggered:Connect(function()
-        workspace.CR.L:Destroy()
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.L.Prompt.Triggered:Connect(function()
+         workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.L:Destroy()
             
         local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
         local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
@@ -425,12 +425,12 @@
         end
         end)
         end)
-    workspace.CR.G.Prompt.Triggered:Connect(function()
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.G.Prompt.Triggered:Connect(function()
         firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"YOU DIED FRROM DIABIETES", "you found candy and ate it", "Dont be greedy kid", "*agressive ball jiggling*"})
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
         end)
-    workspace.CR.NEW.LOL.Triggered:Connect(function()
-        workspace.CR.NEW:Destroy()
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.NEW.LOL.Triggered:Connect(function()
+         workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.NEW:Destroy()
             
         local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
         local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
@@ -488,10 +488,14 @@
 
     
     end) -- put your code here, v is the door
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Prompt.Triggered:Connect(function(plr)
+	    plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Position)
+    end)
+    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Prompt.Triggered:Connect(function(plr)
+	    plr.Character:MoveTo(game. workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Position)
+    end)
         end
     end
-            end
-        for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
-        workspace.CurrentRooms.ChildAdded:Connect(setup)
-        end
----------------
+end
+for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
+workspace.CurrentRooms.ChildAdded:Connect(setup)
