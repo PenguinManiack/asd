@@ -1,0 +1,21 @@
+       local function setup(room)
+            for _, v in pairs(room:GetDescendants()) do
+                if v.Name=="FakeDoor_Hotel" then
+            local FakeDoor_Hotel =  workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("FakeDoor_Hotel", true)
+            local newdoor = FakeDoor_Hotel.FakeDoor.CFrame
+            local model = game:GetObjects("rbxassetid://11821525465")[1]
+            model.Parent = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]
+            model:SetPrimaryPartCFrame(newdoor)
+            FakeDoor_Hotel:Destroy()
+            workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.LOLL.Prompt.Triggered:Connect(function(plr)
+                    plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.lol.Position)
+                end)
+            workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.lol.Prompt.Triggered:Connect(function(plr)
+                    plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.LOLL.Position)
+                end)
+        end
+            end
+        for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
+        workspace.CurrentRooms.ChildAdded:Connect(setup)
+        end
+end)
