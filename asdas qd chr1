@@ -18,4 +18,3 @@
         for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
         workspace.CurrentRooms.ChildAdded:Connect(setup)
         end
-end)
