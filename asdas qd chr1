@@ -1,6 +1,7 @@
-       local function setup(room)
-            for _, v in pairs(room:GetDescendants()) do
-                if v.Name=="FakeDoor_Hotel" then
+local function setup(room)
+    for _, v in pairs(room:GetDescendants()) do
+        if v.Name=="FakeDoor_Hotel" then
+            -- put your code here, v is the door
             local FakeDoor_Hotel =  workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("FakeDoor_Hotel", true)
             local newdoor = FakeDoor_Hotel.FakeDoor.CFrame
             local model = game:GetObjects("rbxassetid://11822792178")[1]
@@ -13,7 +14,7 @@
             workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.lol.Prompt.Triggered:Connect(function(plr)
                     plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.LOLL.Position)
                 end)
-                workspace.CC.SantasSack.Prompt.Triggered:Connect(function()
+             workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CC.SantasSack.Prompt.Triggered:Connect(function()
     local Gift = math.random(1,6)
 if Gift == 1 then
     firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"YOU DIED FRROM DIABIETES", "you found candy and ate it", "Dont be greedy kid", "agressive ball jiggling"})
@@ -54,11 +55,11 @@ if Gift == 6 then
         Hum:SetAttribute("SpeedBoost",speed)
         wait(10)
         local speed = 16
+        end
+        end
+        end)
+        end
     end
 end
-end)
-        end
-            end
-        for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
-        workspace.CurrentRooms.ChildAdded:Connect(setup)
-        end
+for _, room in pairs(workspace.CurrentRooms:GetChildren()) do setup(room) end
+workspace.CurrentRooms.ChildAdded:Connect(setup)
