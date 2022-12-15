@@ -7,7 +7,7 @@ local function setup(room)
         model.Parent = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]
         model:SetPrimaryPartCFrame(newdoor)
         FakeDoor_Hotel:Destroy() -- bedroom
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.C.Prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.C.Prompt.Triggered:Connect(function()
                 workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.C:Destroy()
                 -- // Crucifix Things
             getgenv().TheTool = "11737245722" --Example: getgenv().TheTool = 11590476113 (That is the Normal Crucifix)
@@ -373,7 +373,7 @@ local function setup(room)
             Cross:Remove()
         end)
         end)
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.L.Prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.L.Prompt.Triggered:Connect(function()
          workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.L:Destroy()
             
         local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
@@ -425,11 +425,11 @@ local function setup(room)
         end
         end)
         end)
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.G.Prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.G.Prompt.Triggered:Connect(function()
         firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"YOU DIED FRROM DIABIETES", "you found candy and ate it", "Dont be greedy kid", "*agressive ball jiggling*"})
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
         end)
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.NEW.LOL.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.NEW.LOL.Triggered:Connect(function()
          workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.NEW:Destroy()
             
         local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
@@ -472,37 +472,28 @@ local function setup(room)
                         wait(10)
                         bullet:Destroy()
                 end   
-            end
+                end
+        end)
         tool.Unequipped:Connect(function()
             if track then
                 track:Stop()
         end
         end)
         end)
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking.Prompt.prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking.Prompt.prompt.Triggered:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/asd/main/swedfrghjk7iujR_CidjasjdoIDJOIAJ"))()
 	end)
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking1.Prompt.prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking1.Prompt.prompt.Triggered:Connect(function()
     		loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/asd/main/swedfrghjk7iujR_CidjasjdoIDJOIAJ"))()
 	end)
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking2.Prompt.Prompt.Triggered:Connect(function()
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.FirePlace.stocking2.Prompt.Prompt.Triggered:Connect(function()
     		loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/asd/main/swedfrghjk7iujR_CidjasjdoIDJOIAJ"))()
 	end)
-	
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Prompt.Triggered:Connect(function(plr)
-	        plr.Character:MoveTo(game.workspace.CR.Door1.Position)
-        end)
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Prompt.Triggered:Connect(function(plr)
-        plr.Character:MoveTo(game.workspace.CR.Door2.Position)
-        end)
-
-    
-    end) -- put your code here, v is the door
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Prompt.Triggered:Connect(function(plr)
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Prompt.Triggered:Connect(function(plr)
 	    plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Position)
     end)
-    workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Prompt.Triggered:Connect(function(plr)
-	    plr.Character:MoveTo(game. workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Position)
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door2.Prompt.Triggered:Connect(function(plr)
+	    plr.Character:MoveTo(game.workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].CR.Door1.Position)
     end)
         end
     end
